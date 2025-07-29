@@ -2,3 +2,5 @@
 
 - [MIT License](./LICENSE.md)
 - [新思开源](https://gitea.szis.dev/szisos/ppt2video)
+- [Github](https://github.com/szis-com-cn/ppt2video)
+- [Gitee](https://gitee.com/szis-os/ppt2video)
