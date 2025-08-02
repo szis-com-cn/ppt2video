@@ -118,6 +118,7 @@ export LD_LIBRARY_PATH=/usr/lib/wsl/lib:$LD_LIBRARY_PATH
 echo "✅ Python环境和依赖安装完成"
 
 # 步骤4：安装模型
+
 echo "步骤4：安装模型（网络原因可能需要多次重试）"
 chmod +x scripts/download_models.sh
 bash scripts/download_models.sh
