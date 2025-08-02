@@ -8,8 +8,6 @@ final_output="output/final_training_video.mp4"
 
 slides = PPT2JSON.extract_text_notes_and_images(ppt_file, PPT_IMG_DIR)
 
-tts = JSON2AUDIO()
-
 # 在循环前计算需要补零的位数
 total_slides = len(slides)
 zero_padding = len(str(total_slides))  # 根据总页数决定补零位数
@@ -30,4 +28,4 @@ for slide in slides:
         f.write(script)
 
     # 2. 生成音频
-    tts.text_to_speech(script, audio_file)
+    JSON2AUDIO.text_to_speech(script, audio_file)
