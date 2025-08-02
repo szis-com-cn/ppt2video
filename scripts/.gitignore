@@ -1,0 +1,16 @@
+*test*
+output*/
+upload*/
+*.mp4
+*.json
+.venv
+__pycache__/
+*.png
+*.ppt*
+*.pdf
+projects/
+
+images/
+videos/
+audios/
+human*/
