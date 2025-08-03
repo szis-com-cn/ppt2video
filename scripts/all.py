@@ -2,8 +2,8 @@ from flows import PPT2JSON, JSON2TXT, JSON2AUDIO
 import os
 from flows.config import *
 
-ppt_file="example.pptx"
-human_image="avatar.png"
+ppt_file="output/example.pptx"
+human_image="output/avatar.png"
 final_output="output/final_training_video.mp4"
 
 slides = PPT2JSON.extract_text_notes_and_images(ppt_file, PPT_IMG_DIR)
@@ -20,12 +20,15 @@ for slide in slides:
     formatted_idx = f"{idx:0{zero_padding}d}"
     
     script_file = os.path.join(OUTPUT_DIR, f"slide_{formatted_idx}_script.txt")
-    audio_file = os.path.join(OUTPUT_DIR, f"slide_{formatted_idx}.mp3")
+    audio_file = os.path.join(OUTPUT_DIR, f"zh-CN-YunxiNeural_{formatted_idx}.mp3")
 
     # 1. 生成口播稿
     script = JSON2TXT.generate_script_with_llm(idx, len(slides), slide["slide_text"], slide["notes_text"])
     with open(script_file, "w", encoding="utf-8") as f:
         f.write(script)
 
+    # with open(script_file, "r", encoding="utf-8") as f:
+    #     script = f.read()
+
     # 2. 生成音频
-    JSON2AUDIO.text_to_speech(script, audio_file)
+    JSON2AUDIO.text_to_speech(script, audio_file, voice="zh-CN-YunxiNeural", rate="+10%", volume="+0%")
