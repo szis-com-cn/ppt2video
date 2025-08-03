@@ -1,7 +1,7 @@
 # config.py
 import os
 
-API_KEY = "de3ec0be8bd34234b7aef1175beb5c48.gzFFjXai6f3g87Ai"
+API_KEY = ""
 LLM_URL = "https://open.bigmodel.cn/api/paas/v4/chat/completions"
 
 OUTPUT_DIR = "output"
